@@ -1,6 +1,6 @@
 # Recursos Exclusivos de la Página Web 🎁
 
-![Logo de la Página Web](https://your-website-url.com/assets/logo.png)
+![Logo de la Página Web](https://github.com/CODIGO2022-B/recurcursos/blob/main/img/aa.webp)
 
 ## ¡Bienvenido al repositorio de Recursos Exclusivos de la Página Web!
 
