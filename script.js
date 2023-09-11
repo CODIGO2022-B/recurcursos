@@ -1,9 +1,10 @@
-window.addEventListener("DOMContentLoaded",() => {
-	const upload = new UploadModal("#upload");
+window.addEventListener("DOMContentLoaded", () => {
+    const upload = new UploadModal("#upload");
 });
 
 class UploadModal {
     filename = "";
+    fileURL = ""; // Nueva variable para almacenar la URL del archivo cargado
     isCopying = false;
     isUploading = false;
     progress = 0;
@@ -12,9 +13,10 @@ class UploadModal {
 
     constructor(el) {
         this.el = document.querySelector(el);
-        this.el?.addEventListener("click",this.action.bind(this));
-        this.el?.querySelector("#file")?.addEventListener("change",this.fileHandle.bind(this));
+        this.el?.addEventListener("click", this.action.bind(this));
+        this.el?.querySelector("#file")?.addEventListener("change", this.fileHandle.bind(this));
     }
+    
     action(e) {
         this[e.target?.getAttribute("data-action")]?.();
         this.stateDisplay();
@@ -28,24 +30,27 @@ class UploadModal {
         this.progressDisplay();
         this.fileReset();
     }
+    
     async copy() {
         const copyButton = this.el?.querySelector("[data-action='copy']");
 
         if (!this.isCopying && copyButton) {
-            // disable
-            this.isCopying = true;
-            copyButton.style.width = `${copyButton.offsetWidth}px`;
-            copyButton.disabled = true;
-            copyButton.textContent = "Copied!";
-            navigator.clipboard.writeText(this.filename);
-            await new Promise(res => setTimeout(res, 1000));
-            // reenable
-            this.isCopying = false;
-            copyButton.removeAttribute("style");
-            copyButton.disabled = false;
-            copyButton.textContent = "Copy Link";
+            // Copiar la URL completa del archivo
+            if (this.fileURL) {
+                navigator.clipboard.writeText(this.fileURL);
+                copyButton.textContent = "Copied!";
+                setTimeout(() => {
+                    copyButton.textContent = "Copy Link";
+                }, 1000);
+                // reenable
+                this.isCopying = false;
+                copyButton.removeAttribute("style");
+                copyButton.disabled = false;
+                copyButton.textContent = "Copy Link";
+            }
         }
     }
+    
     fail() {
         this.isUploading = false;
         this.progress = 0;
@@ -53,9 +58,11 @@ class UploadModal {
         this.state = 2;
         this.stateDisplay();
     }
+    
     file() {
         this.el?.querySelector("#file").click();
     }
+    
     fileDisplay(name = "") {
         // update the name
         this.filename = name;
@@ -66,6 +73,7 @@ class UploadModal {
         // show the file
         this.el?.setAttribute("data-ready", this.filename ? "true" : "false");
     }
+    
     fileHandle(e) {
         return new Promise(() => {
             const { target } = e;
@@ -78,12 +86,14 @@ class UploadModal {
             }
         });
     }
+    
     fileReset() {
         const fileField = this.el?.querySelector("#file");
         if (fileField) fileField.value = null;
 
         this.fileDisplay();
     }
+    
     progressDisplay() {
         const progressValue = this.el?.querySelector("[data-progress-value]");
         const progressFill = this.el?.querySelector("[data-progress-fill]");
@@ -92,6 +102,7 @@ class UploadModal {
         if (progressValue) progressValue.textContent = `${progressTimes100}%`;
         if (progressFill) progressFill.style.transform = `translateX(${progressTimes100}%)`;
     }
+    
     async progressLoop() {
         this.progressDisplay();
 
@@ -121,14 +132,24 @@ class UploadModal {
             }
         }
     }
+    
     stateDisplay() {
         this.el?.setAttribute("data-state", `${this.state}`);
     }
-    success() {
+    
+    async success() {
         this.isUploading = false;
         this.state = 3;
         this.stateDisplay();
+
+        const fileLink = this.el?.querySelector("[data-file-link]");
+        if (fileLink) {
+            // Construir la URL completa del archivo cargado
+            this.fileURL = `https://codigo2022-b.github.io/recurcursos/index.hmtl/${this.filename}`; // Reemplaza URL_DEL_SITIO con la URL real de tu sitio
+            fileLink.textContent = this.fileURL;
+        }
     }
+    
     upload() {
         if (!this.isUploading) {
             this.isUploading = true;

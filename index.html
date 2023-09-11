@@ -96,14 +96,15 @@
 					<button class="modal__button" type="button" data-action="cancel">Cancelar</button>
 				</div>
 			</div>
-			<div class="modal__content" hidden>
-				<h2 class="modal__title">Subido exitosa!</h2>
-				<p class="modal__message">Su archivo ha sido subido. Puede copiar el enlace a su portapapeles.</p>
-				<div class="modal__actions modal__actions--center">
-					<button class="modal__button" type="button" data-action="copy">Copy Link</button>
-					<button class="modal__button" type="button" data-action="cancel">Subir otro archivo</button>
-				</div>
-			</div>
+		    <div class="modal__content" hidden>
+		        <h2 class="modal__title">Archivo Subido</h2>
+		        <p class="modal__message">El archivo ha sido cargado. Aquí está el enlace:</p>
+		        <div class="modal__actions modal__actions--center">
+		            <div class="modal__file" data-file-link></div>
+		            <button class="modal__button" type="button" data-action="copy">Copiar Link</button>
+		            <button class="modal__button" type="button" data-action="cancel">Subir otro archivo</button>
+		        </div>
+		    </div>
 		</div>
 	</div>
 </div>
