@@ -10,7 +10,7 @@
 
 ## Uso Exclusivo 🚫
 
-Los recursos almacenados en este repositorio están diseñados exclusivamente para complementar y enriquecer la experiencia de la página web [Nombre de la Página Web](https://codigo2022-b.github.io/FCA). Por favor, ten en cuenta las siguientes pautas y consideraciones:
+Los recursos almacenados en este repositorio están diseñados exclusivamente para complementar y enriquecer la experiencia de la página web [Codigo 2022-B](https://codigo2022-b.github.io/FCA). Por favor, ten en cuenta las siguientes pautas y consideraciones:
 
 - **No Distribución**: Está estrictamente prohibido distribuir, compartir o utilizar estos recursos en otros sitios web, aplicaciones u otros medios digitales sin la autorización expresa del propietario de este repositorio.
 
@@ -22,8 +22,8 @@ Los recursos almacenados en este repositorio están diseñados exclusivamente pa
 
 ## Contacto 📬
 
-Si tienes alguna pregunta, necesitas permisos adicionales o deseas explorar la posibilidad de utilizar estos recursos en un contexto diferente, no dudes en ponerte en contacto a través de [correo@tuemail.com](mailto:correo@tuemail.com).
+Si tienes alguna pregunta, necesitas permisos adicionales o deseas explorar la posibilidad de utilizar estos recursos en un contexto diferente, no dudes en ponerte en contacto a través de [@unac.eu.pe](mailto:correo@tuemail.com).
 
 ¡Gracias por respetar estas condiciones y disfrutar responsablemente de estos recursos!
 
-&copy; [Tu Nombre] | [Año]
+&copy; [MQ] | [2023]
