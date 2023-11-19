@@ -6,37 +6,67 @@
     <title>Aviso de Uso de Recursos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 20px;
+            background-color: #f4f4f4;
+            color: #ff0000; /* Cambiado a rojo */
         }
 
         h1 {
-            color: #333;
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         p {
             color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            cursor: pointer; /* Añadido un cursor de puntero para indicar que es interactivo */
         }
 
         .warning {
             color: #ff0000;
             font-weight: bold;
         }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #999;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Aviso de Uso de Recursos</h1>
+    <div class="container">
+        <h1>Aviso de Uso de Recursos</h1>
 
-    <p>Esta página contiene información importante sobre el uso de los recursos almacenados en nuestra base de datos. Por favor, lee con atención.</p>
+        <p id="textoCambiable" onclick="cambiarColor()">
+            Esta página contiene información importante sobre el uso de los recursos almacenados en nuestra base de datos. Por favor, lee con atención.
+        </p>
 
-    <div class="warning">
-        <p>¡Advertencia!</p>
-        <p>El uso de los recursos almacenados en esta base de datos está estrictamente prohibido sin autorización.</p>
-        <p>Cualquier violación de esta política puede resultar en acciones legales y otras consecuencias graves.</p>
+        <div class="warning">
+            <p>¡Advertencia!</p>
+            <p>El uso de los recursos almacenados en esta base de datos está estrictamente prohibido sin autorización.</p>
+            <p>Cualquier violación de esta política puede resultar en acciones legales y otras consecuencias graves.</p>
+        </div>
+
+        <p>Si tienes alguna pregunta o necesitas más información, por favor contacta con nuestro equipo de soporte.</p>
     </div>
 
-    <p>Si tienes alguna pregunta o necesitas más información, por favor contacta con nuestro equipo de soporte.</p>
+    <footer>
+        &copy; 2023 Tu Empresa. Todos los derechos reservados.
+    </footer>
 
 </body>
 </html>
